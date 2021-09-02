@@ -23,6 +23,7 @@ document.head.appendChild(Object.assign(document.createElement('style'), {
 }
 .firefly:nth-of-type(${i})::after {
   animation-duration: ${random(10) + 8 + 's'}, ${random(6000) + 5000 + 'ms'};
+  animation-delay: 0ms, ${random(8000)) + 500 + 'ms'};
 }
     `
     })
