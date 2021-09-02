@@ -97,7 +97,7 @@ main section a {
 
 .firefly::after {
   background: white;
-  opacity: 1;
+  opacity: 0;
   box-shadow: 0 0 0vw 0vw yellow;
   animation-name: drift, flash;
   animation-duration: 3000ms, 4500ms;
