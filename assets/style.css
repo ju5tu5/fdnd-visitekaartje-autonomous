@@ -1,0 +1,174 @@
+:root {
+  --c-creme: #f0ece3;
+  --c-blue: #131444;
+  --c-blue-a: #13144444;
+
+  --cx: 50vw;
+  --cy: 50vh;
+  --px: 0vw;
+  --py: 0vh;
+
+  --r: 30vw;
+  --offset: 6vw;
+
+  --philosopher: calc(var(--r) + var(--offset) * 2);
+  --engineer: calc(var(--r) + var(--offset));
+  --creative: calc(var(--r));
+
+  --shadow: 4rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Caveat', cursive;
+  width: 100vw;
+  height: 100vh;
+  background: var(--c-creme);
+  color: var(--c-blue);
+  font-size: 3vw;
+}
+header {
+  position: absolute;
+  top: calc(var(--cy) - var(--engineer) / 2);
+  left: calc(var(--cx) - var(--engineer));
+  height: var(--engineer);
+  width: calc(var(--engineer) * 2);
+  text-align: center;
+}
+header svg {
+  height: var(--engineer);
+}
+main {
+  position: relative;
+  background: var(-c-creme);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+article {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+footer > label {
+  position: absolute;
+  bottom: 1vh;
+  right: 1vw;
+  display: block;
+  pointer-events: all;
+  z-index: 9;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--c-blue);
+  color: var(--c-creme);
+}
+#thinking {
+  position: absolute;
+  left: -10rem;
+}
+.mind span {
+  display: none;
+}
+#thinking:checked ~ .mind span {
+  display: block;
+}
+footer span {
+  margin-top: -1rem;
+  margin-left: -1rem;
+  width: calc(100vw + 10rem);
+  text-align: justify;
+  word-break: keep-all;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--c-creme);
+}
+
+.philosopher {
+  background: radial-gradient(
+    circle at calc(var(--cx) + calc(var(--px) * 9)) calc(var(--cy) + calc(var(--py) * 9)),
+    transparent var(--philosopher),
+    var(--c-blue-a) var(--philosopher)
+  );
+}
+.philosopher > span {
+  margin-top: calc(-6rem + calc(var(--py) * 9));
+  margin-left: calc(-6rem + calc(var(--px) * 9));
+}
+
+.engineer {
+  padding-top: 0.5rem;
+  background: radial-gradient(
+    circle at calc(var(--cx) + calc(var(--px) * 6)) calc(var(--cy) + calc(var(--py) * 6)),
+    transparent var(--engineer),
+    var(--c-blue-a) var(--engineer)
+  );
+}
+.engineer > span {
+  margin-top: calc(-4rem + calc(var(--py) * 6));
+  margin-left: calc(-4rem + calc(var(--px) * 6));
+}
+
+.creative {
+  padding-top: 1rem;
+  background: radial-gradient(
+    circle at calc(var(--cx) + calc(var(--px) * 3)) calc(var(--cy) + calc(var(--py) * 3)),
+    transparent var(--creative),
+    var(--c-blue-a) var(--creative)
+  );
+}
+.creative > span {
+  margin-top: calc(-2rem + calc(var(--py) * 3));
+  margin-left: calc(-2rem + calc(var(--px) * 3));
+}
+
+.bio {
+  overflow: scroll;
+}
+.bio > * {
+  position: -webkit-sticky;
+  position: sticky;
+  top: calc((var(--cy) + 4vh - var(--creative)) + (1.2rem * var(--index)));
+  margin: 0 auto;
+  margin-top: 2vh;
+  margin-left: calc(var(--cx) - 15vw);
+  width: 30vw;
+  height: 50vh;
+  text-align: center;
+}
+.bio > *:nth-of-type(1) {
+  --index: 1;
+  margin-top: 100vh;
+}
+.bio > *:nth-of-type(2) {
+  --index: 2;
+}
+.bio > *:nth-of-type(3) {
+  --index: 3;
+}
+.bio > *:nth-of-type(4) {
+  --index: 4;
+}
+.bio > *:nth-of-type(5) {
+  --index: 5;
+}
+
+.david {
+}
+#burst-lower {
+  display: none;
+}
